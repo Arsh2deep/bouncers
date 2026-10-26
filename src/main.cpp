@@ -134,6 +134,19 @@ int main() {
         if(y_spawn > MAX_Y){
             y_spawn = MIN_Y;
         }
+        // Move the manual bouncer with the D-Pad
+        if(bn::keypad::left_held()) {
+            manual.sprite.set_x(manual.sprite.x() - 2);
+        }
+        if(bn::keypad::right_held()) {
+            manual.sprite.set_x(manual.sprite.x() + 2);
+        }
+        if(bn::keypad::up_held()) {
+            manual.sprite.set_y(manual.sprite.y() - 2);
+        }
+        if(bn::keypad::down_held()) {
+            manual.sprite.set_y(manual.sprite.y() + 2);
+        }
         manual.update();
         bn::core::update();
     }
