@@ -7,7 +7,7 @@
 #include <bn_vector.h>
 #include <bn_log.h>
 
-#include "bn_sprite_items_dot.h"
+#include "bn_sprite_items_hero.h"
 
 // Set max/min x position to be the edges of the display
 static constexpr int HALF_SCREEN_WIDTH = bn::display::width() / 2;
@@ -31,7 +31,7 @@ class Bouncer {
         bn::fixed y_speed;
 
         Bouncer(bn::fixed x_start, bn::fixed y_start, bn::random& random) : 
-                sprite(bn::sprite_items::dot.create_sprite(x_start, y_start)),
+                sprite(bn::sprite_items::hero.create_sprite(x_start, y_start)),
                 x_speed(random.get_fixed(BASE_SPEED*2)- BASE_SPEED), 
                 y_speed(random.get_fixed(BASE_SPEED*2)-BASE_SPEED)
         {
